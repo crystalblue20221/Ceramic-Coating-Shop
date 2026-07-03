@@ -41,75 +41,77 @@ const fadeObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 fadeEls.forEach(el => fadeObserver.observe(el));
 
-// ---- Popup Modal ----
+// ---- Popup Modal ---- (only on pages that include the modal markup)
 const modalOverlay = document.getElementById('cr-modal-overlay');
 const modalClose = document.getElementById('cr-modal-close');
 let modalShown = false;
 
-function openModal() {
-  if (modalShown) return;
-  modalOverlay.classList.add('active');
-  document.body.style.overflow = 'hidden';
-  modalShown = true;
-  sessionStorage.setItem('cr-modal-shown', '1');
-}
+if (modalOverlay && modalClose) {
+  function openModal() {
+    if (modalShown) return;
+    modalOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    modalShown = true;
+    sessionStorage.setItem('cr-modal-shown', '1');
+  }
 
-function closeModal() {
-  modalOverlay.classList.remove('active');
-  document.body.style.overflow = '';
-}
+  function closeModal() {
+    modalOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
 
-// Close on X button
-modalClose.addEventListener('click', closeModal);
+  // Close on X button
+  modalClose.addEventListener('click', closeModal);
 
-// Close on overlay background click
-modalOverlay.addEventListener('click', function(e) {
-  if (e.target === modalOverlay) closeModal();
-});
-
-// Close on Escape key
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeModal();
-});
-
-// Open on any trigger button click (always opens even if session-shown)
-document.querySelectorAll('.cr-modal-trigger').forEach(btn => {
-  btn.addEventListener('click', function(e) {
-    e.preventDefault();
-    modalShown = false;
-    openModal();
+  // Close on overlay background click
+  modalOverlay.addEventListener('click', function(e) {
+    if (e.target === modalOverlay) closeModal();
   });
-});
 
-// Auto-triggers — only if not already shown this session
-if (!sessionStorage.getItem('cr-modal-shown')) {
-  // 1. 15-second delay trigger
-  setTimeout(openModal, 15000);
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+  });
 
-  // 2. Exit intent — desktop (mouse leaves top of viewport)
-  document.addEventListener('mouseleave', function onExitIntent(e) {
-    if (e.clientY <= 0) {
+  // Open on any trigger button click (always opens even if session-shown)
+  document.querySelectorAll('.cr-modal-trigger').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      modalShown = false;
       openModal();
-      document.removeEventListener('mouseleave', onExitIntent);
-    }
+    });
   });
 
-  // 3. Exit intent — mobile (user scrolls back up quickly = about to leave)
-  let lastScrollY = window.scrollY;
-  let ticking = false;
-  window.addEventListener('scroll', function() {
-    if (!ticking) {
-      window.requestAnimationFrame(function() {
-        const currentY = window.scrollY;
-        if (lastScrollY - currentY > 80 && currentY > 300) {
-          openModal();
-        }
-        lastScrollY = currentY;
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }, { passive: true });
+  // Auto-triggers — only if not already shown this session
+  if (!sessionStorage.getItem('cr-modal-shown')) {
+    // 1. 15-second delay trigger
+    setTimeout(openModal, 15000);
+
+    // 2. Exit intent — desktop (mouse leaves top of viewport)
+    document.addEventListener('mouseleave', function onExitIntent(e) {
+      if (e.clientY <= 0) {
+        openModal();
+        document.removeEventListener('mouseleave', onExitIntent);
+      }
+    });
+
+    // 3. Exit intent — mobile (user scrolls back up quickly = about to leave)
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        window.requestAnimationFrame(function() {
+          const currentY = window.scrollY;
+          if (lastScrollY - currentY > 80 && currentY > 300) {
+            openModal();
+          }
+          lastScrollY = currentY;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
 }
 
 // ---- Stats counter animation ----

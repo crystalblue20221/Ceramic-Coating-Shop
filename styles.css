@@ -624,6 +624,45 @@ ul { list-style: none; }
 .cr-testimonial-role { font-size: 12px; color: var(--cr-muted); }
 
 /* ============================================================
+   AFFILIATE PRODUCTS
+   ============================================================ */
+.cr-products-disclosure {
+  font-size: 13px; color: var(--cr-muted); text-align: center;
+  max-width: 640px; margin: 20px auto 0; line-height: 1.6;
+}
+.cr-products-category { margin-top: 64px; }
+.cr-products-category:first-of-type { margin-top: 40px; }
+.cr-products-category-title {
+  font-size: 22px; font-weight: 800; margin-bottom: 24px;
+  display: flex; align-items: center; gap: 10px;
+}
+.cr-products-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.cr-product-card {
+  background: var(--cr-card);
+  border: 1px solid var(--cr-border);
+  border-radius: var(--cr-radius);
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: border-color .2s, background .2s, transform .15s;
+}
+.cr-product-card:hover { border-color: var(--cr-gold-border); background: var(--cr-card-2); transform: translateY(-3px); }
+.cr-product-image {
+  aspect-ratio: 4/3;
+  background: var(--cr-surface);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 36px; color: var(--cr-muted);
+  border-bottom: 1px solid var(--cr-border);
+}
+.cr-product-body { padding: 20px; display: flex; flex-direction: column; flex: 1; }
+.cr-product-name { font-size: 16px; font-weight: 800; margin-bottom: 8px; }
+.cr-product-desc { font-size: 14px; color: var(--cr-muted); line-height: 1.5; margin-bottom: 16px; flex: 1; }
+.cr-product-price { font-size: 19px; font-weight: 900; color: var(--cr-gold); margin-bottom: 16px; }
+.cr-product-cta { width: 100%; justify-content: center; }
+
+/* ============================================================
    FAQ
    ============================================================ */
 #cr-faq { padding: 96px 0; background: var(--cr-surface); }
@@ -794,6 +833,7 @@ details.cr-faq-item[open] summary::after { transform: rotate(45deg); }
   .cr-stat-item:nth-child(4), .cr-stat-item:nth-child(5) { border-top: 1px solid var(--cr-border); }
   .cr-industries-grid { grid-template-columns: repeat(3, 1fr); }
   .cr-footer-inner { grid-template-columns: 1fr 1fr; }
+  .cr-products-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
@@ -816,6 +856,7 @@ details.cr-faq-item[open] summary::after { transform: rotate(45deg); }
   .cr-stat-item { border-right: none; border-bottom: 1px solid var(--cr-border); }
   .cr-testimonials-grid { grid-template-columns: 1fr; }
   .cr-industries-grid { grid-template-columns: repeat(2, 1fr); }
+  .cr-products-grid { grid-template-columns: 1fr; }
   .cr-footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
   .cr-footer-bottom { flex-direction: column; text-align: center; }
   #cr-cta h2 { font-size: 36px; }
