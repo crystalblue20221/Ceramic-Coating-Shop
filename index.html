@@ -9,6 +9,31 @@
   <title>AI Automation for Ceramic Coating Shops | 6-Figure Detailer</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23FFB612'/><text y='.9em' font-size='60' x='50%' dominant-baseline='middle' text-anchor='middle'>⚡</text></svg>" />
+<style>
+  /* pricing cards (were missing from styles.css) */
+  .cr-pricing-standard-banner{max-width:760px;margin:0 auto 34px;text-align:center;background:var(--cr-card,#12161c);border:1px solid var(--cr-border,#2a2f37);border-radius:12px;padding:14px 20px;color:var(--cr-text,#e8e8e8);font-size:15px;}
+  .cr-pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1080px;margin:0 auto;align-items:stretch;}
+  .cr-pricing-card{background:var(--cr-card,#12161c);border:1px solid var(--cr-border,#2a2f37);border-radius:14px;padding:32px 26px;display:flex;flex-direction:column;position:relative;}
+  .cr-pricing-card-featured{border-color:var(--cr-gold,#FFB612);box-shadow:0 0 0 1px var(--cr-gold,#FFB612),0 24px 48px rgba(0,0,0,.4);}
+  .cr-pricing-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--cr-gold,#FFB612);color:#0a0a0a;font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.08em;padding:5px 14px;border-radius:999px;white-space:nowrap;}
+  .cr-pricing-tier-label{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--cr-muted,#9aa0a8);margin-bottom:10px;}
+  .cr-pricing-amount-row{display:flex;align-items:flex-start;gap:3px;}
+  .cr-pricing-dollar{font-size:22px;font-weight:700;color:var(--cr-text,#fff);margin-top:10px;}
+  .cr-pricing-amount{font-size:48px;font-weight:800;color:var(--cr-text,#fff);line-height:1;}
+  .cr-pricing-positioning{color:var(--cr-muted,#9aa0a8);font-size:14px;font-style:italic;margin:8px 0 0;min-height:44px;}
+  .cr-pricing-divider{height:1px;background:var(--cr-border,#2a2f37);margin:18px 0;}
+  .cr-pricing-features{list-style:none;padding:0;margin:0;flex:1;}
+  .cr-pricing-features li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;color:var(--cr-text,#e8e8e8);font-size:15px;}
+  .cr-pricing-check{color:var(--cr-gold,#FFB612);font-weight:800;flex:none;}
+  .cr-pricing-cta-shared{text-align:center;margin-top:42px;}
+  @media(max-width:900px){.cr-pricing-grid{grid-template-columns:1fr;max-width:440px;}}
+  /* settle reveal animations so nothing looks half-finished */
+  .cr-fade{opacity:1 !important;transform:none !important;filter:none !important;}
+  /* sticky CTA bar */
+  .cr-stickybar{position:fixed;left:0;right:0;bottom:0;z-index:9999;background:var(--cr-bg,#0a0d12);border-top:1px solid var(--cr-border,#2a2f37);padding:12px 16px;display:none;justify-content:center;box-shadow:0 -6px 24px rgba(0,0,0,.45);}
+  .cr-stickybar.show{display:flex;}
+  .cr-stickybar .cr-btn{width:100%;max-width:520px;text-align:center;}
+</style>
 </head>
 <body>
 
@@ -32,7 +57,7 @@
 
     <div class="cr-nav-cta">
       <a href="#cr-demo" class="cr-btn cr-btn-outline" style="padding:10px 18px;font-size:14px;">Try Demo</a> <a href="tel:+16149024952" class="cr-btn cr-btn-outline cr-call-btn" style="padding:10px 18px;font-size:14px;">📞 (614) 902-4952</a>
-      <button class="cr-btn cr-btn-gold cr-modal-trigger" style="padding:10px 18px;font-size:14px;">Apply →</button>
+      <a href="#cr-booking" class="cr-btn cr-btn-gold" style="padding:10px 18px;font-size:14px;">Apply →</a>
     </div>
 
     <button class="cr-hamburger" id="cr-hamburger" aria-label="Open menu">
@@ -45,7 +70,7 @@
     <a href="#cr-demo">Live Demo</a>
     <a href="#cr-pricing">Pricing</a>
     <a href="#cr-faq">FAQ</a>
-    <a href="#cr-cta">Apply. The Leak Stops Here.</a>
+    <a href="#cr-booking">Apply. The Leak Stops Here.</a>
   </div>
 </nav>
 
@@ -71,7 +96,7 @@
         </p>
 
         <div class="cr-hero-actions">
-          <a href="#cr-cta" class="cr-btn cr-btn-gold">Apply. The Leak Stops Here.</a>
+          <a href="#cr-booking" class="cr-btn cr-btn-gold">Apply. The Leak Stops Here.</a>
           <a href="#cr-how" class="cr-btn cr-btn-outline">See How It Works</a>
         </div>
 
@@ -185,7 +210,7 @@
           <span class="cr-workforce-bullet-text">Request the review while the customer is happiest with the finish</span>
         </div>
       </div>
-      <a href="#cr-cta" class="cr-btn cr-btn-gold">Apply. The Leak Stops Here.</a>
+      <a href="#cr-booking" class="cr-btn cr-btn-gold">Apply. The Leak Stops Here.</a>
     </div>
   </div>
 </section>
@@ -352,7 +377,7 @@
       </div>
     </div>
     <div style="text-align:center; margin-top: 48px;" class="cr-fade cr-fade-delay-3">
-      <a href="#cr-cta" class="cr-btn cr-btn-gold">Apply. The Leak Stops Here.</a>
+      <a href="#cr-booking" class="cr-btn cr-btn-gold">Apply. The Leak Stops Here.</a>
     </div>
   </div>
 </section>
@@ -504,7 +529,7 @@
       </div>
     </div>
     <div style="text-align:center; margin-top: 32px;" class="cr-fade cr-fade-delay-3">
-      <p style="font-size:14px; color: var(--cr-muted);">Run a coating or PPF shop with a different setup? <a href="#cr-cta">Book a strategy call →</a> We'll tailor it.</p>
+      <p style="font-size:14px; color: var(--cr-muted);">Run a coating or PPF shop with a different setup? <a href="#cr-booking">Book a strategy call →</a> We'll tailor it.</p>
     </div>
   </div>
 </section>
@@ -598,7 +623,6 @@
           <li><span class="cr-pricing-check">✓</span> Review requests</li>
           <li><span class="cr-pricing-check">✓</span> Smart Website</li>
         </ul>
-        <a href="#cr-cta" class="cr-btn cr-btn-outline cr-pricing-cta">Apply. The Leak Stops Here.</a>
       </div>
 
       <!-- Tier 2 - Most Popular -->
@@ -620,7 +644,7 @@
           <li><span class="cr-pricing-check">✓</span> Customer reactivation</li>
           <li><span class="cr-pricing-check">✓</span> Priority setup</li>
         </ul>
-        <a href="#cr-cta" class="cr-btn cr-btn-gold cr-pricing-cta">Apply. The Leak Stops Here.</a>
+        <a href="#cr-booking" class="cr-btn cr-btn-gold" style="width:100%;text-align:center;margin-top:24px;">Apply. The Leak Stops Here.</a>
       </div>
 
       <!-- Tier 3 - Custom -->
@@ -638,7 +662,6 @@
           <li><span class="cr-pricing-check">✓</span> Custom workflows</li>
           <li><span class="cr-pricing-check">✓</span> Built around your setup</li>
         </ul>
-        <a href="#cr-cta" class="cr-btn cr-btn-outline cr-pricing-cta">Apply. The Leak Stops Here.</a>
       </div>
 
     </div>
@@ -699,7 +722,7 @@
     <p class="cr-fade cr-fade-delay-2">Built for coating shops that want faster quotes, cleaner follow-up, documented jobs, and more repeat maintenance bookings - without remembering every warranty date yourself.</p>
     <div class="cr-cta-actions cr-fade cr-fade-delay-3">
       <a href="#cr-demo" class="cr-btn cr-btn-outline">Try the Live Demo</a>
-      <button class="cr-btn cr-btn-gold cr-modal-trigger">Apply. The Leak Stops Here.</button>
+      <a href="#cr-booking" class="cr-btn cr-btn-gold">Apply. The Leak Stops Here.</a>
     </div>
 
     <!-- Trust signals below CTA -->
@@ -744,7 +767,7 @@
       <div class="cr-footer-col">
         <h4>Get Started</h4>
         <ul class="cr-footer-links">
-          <li><a href="#cr-cta">Book a Strategy Call</a></li>
+          <li><a href="#cr-booking">Book a Strategy Call</a></li>
           <li><a href="#cr-demo">Try the Demo</a></li>
           <li><a href="mailto:crystalblue20221@gmail.com">Email Us</a></li>
         </ul>
@@ -762,21 +785,21 @@
 
 <section id="cr-booking" class="cr-fade" style="padding:96px 0;">
   <div class="cr-container" style="max-width:640px;margin:0 auto;text-align:center;">
-  <h2 style="margin-bottom:12px;">Pick a Time for Your Strategy Call</h2>
-  <p style="margin-bottom:32px;">You're almost done, grab a time below and we'll see you then.</p>
+  <h2 style="margin-bottom:12px;">Apply. The Leak Stops Here.</h2>
+  <p style="margin-bottom:32px;">Takes about two minutes. Qualified applicants only. If you're a fit, we'll reach out to book your free AI Follow-Up &amp; Revenue Audit.</p>
   <iframe
-  src="https://api.leadconnectorhq.com/widget/form/Ro2883Yhd1YgZumshkbk"
-  style="width:100%;height:700px;border:none;border-radius:8px;"
-  id="inline-Ro2883Yhd1YgZumshkbk"
+  src="https://api.leadconnectorhq.com/widget/form/4lZSXOgxrMianb50teXU"
+  style="width:100%;height:2077px;border:none;border-radius:8px;"
+  id="inline-4lZSXOgxrMianb50teXU"
   data-layout="{'id':'INLINE'}"
   data-trigger-type="alwaysShow"
   data-activation-type="alwaysActivated"
   data-deactivation-type="neverDeactivate"
-  data-form-name="Calendar Booking Form"
-  data-height="700"
-  data-layout-iframe-id="inline-Ro2883Yhd1YgZumshkbk"
-  data-form-id="Ro2883Yhd1YgZumshkbk"
-  title="Calendar Booking Form"
+  data-form-name="Ceramic Coating-Booking Application"
+  data-height="2077"
+  data-layout-iframe-id="inline-4lZSXOgxrMianb50teXU"
+  data-form-id="4lZSXOgxrMianb50teXU"
+  title="Ceramic Coating-Booking Application"
   ></iframe>
   </div>
   </section>
@@ -784,37 +807,12 @@
   <!-- ============================================================
      POPUP MODAL - Strategy Call Application
      ============================================================ -->
-<div class="cr-modal-overlay" id="cr-modal-overlay">
-  <div class="cr-modal" id="cr-modal">
-    <div class="cr-modal-header">
-      <div>
-        <div class="cr-modal-title">⚡ Apply for Your Strategy Call</div>
-        <div class="cr-modal-sub">Takes 2 minutes · Qualified applicants only</div>
-      </div>
-      <button class="cr-modal-close" id="cr-modal-close" aria-label="Close">✕</button>
-    </div>
-    <div class="cr-modal-body">
-      <iframe
-        src="https://api.leadconnectorhq.com/widget/form/T37x7IKhFzsMXjxD6ZGe"
-        style="width:100%;height:1697px;border:none;"
-        id="inline-T37x7IKhFzsMXjxD6ZGe"
-        data-layout="{'id':'INLINE'}"
-        data-trigger-type="alwaysShow"
-        data-trigger-value=""
-        data-activation-type="alwaysActivated"
-        data-activation-value=""
-        data-deactivation-type="neverDeactivate"
-        data-deactivation-value=""
-        data-form-name="6-Figure Detailer - Strategy Call Application"
-        data-height="1697"
-        data-layout-iframe-id="inline-T37x7IKhFzsMXjxD6ZGe"
-        data-form-id="T37x7IKhFzsMXjxD6ZGe"
-        title="6-Figure Detailer - Strategy Call Application"
-      ></iframe>
-    </div>
-  </div>
-</div>
+<!-- Popup modal removed: the qualifying form now lives inline in #cr-booking -->
 
+<div class="cr-stickybar" id="cr-stickybar"><a href="#cr-booking" class="cr-btn cr-btn-gold">Apply. The Leak Stops Here.</a></div>
+<script>
+(function(){var bar=document.getElementById('cr-stickybar'),hero=document.getElementById('cr-hero'),form=document.getElementById('cr-booking');if(!bar)return;function upd(){var y=window.scrollY||document.documentElement.scrollTop;var past=y>((hero?hero.offsetHeight:500)-100);var near=false;if(form){var r=form.getBoundingClientRect();near=(r.top<window.innerHeight&&r.bottom>0);}bar.classList.toggle('show',past&&!near);}window.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);upd();})();
+</script>
 <script src="main.js"></script>
 <script src="https://link.msgsndr.com/js/form_embed.js"></script>
 </body>
