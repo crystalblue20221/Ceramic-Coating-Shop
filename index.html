@@ -71,20 +71,13 @@
   /* 7. Gold accent bar under section eyebrow labels — small brand cue */
   .cr-label{position:relative;}
 
-  /* 8. Entrance motion — CSS-only, guaranteed to end visible.
-        Runs on load with fill-mode both, so nothing can get stuck hidden
-        (no dependency on the scroll observer). Reduced-motion shows instantly. */
-  @keyframes crRise{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:none;}}
-  /* backwards fill: shows the start frame during any delay, then RELEASES —
-     resting state is the base below, so hover/scale transforms still work. */
-  .cr-fade{opacity:1;transform:none;animation:crRise .7s cubic-bezier(.16,1,.3,1) backwards;}
-  .cr-fade-delay-1{animation-delay:.08s;}
-  .cr-fade-delay-2{animation-delay:.16s;}
-  .cr-fade-delay-3{animation-delay:.24s;}
-  .cr-fade-delay-4{animation-delay:.32s;}
-  .cr-fade-delay-5{animation-delay:.40s;}
+  /* 8. Content always resting-visible — no entrance keyframe animation.
+        A frozen animation timeline (background tab, throttling) can pin a
+        hidden start-frame and blank the page, so we don't animate reveal at
+        all. Motion lives in hover/scale/sticky transitions, which only fire
+        on interaction FROM a visible base and can never hide content. */
+  .cr-fade{opacity:1 !important;transform:none;} /* transform not !important, so hover/featured-scale still win */
   @media (prefers-reduced-motion: reduce){
-    .cr-fade{animation:none;opacity:1;transform:none;}
     .cr-cap-category,.cr-industry-card,.cr-testimonial-card,.cr-channel-card,.cr-pricing-card,.cr-btn,.cr-pricing-card-featured,.cr-stickybar{transition:none !important;}
   }
 </style>
