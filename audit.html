@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Request a free Revenue Leak Audit for your ceramic coating or PPF shop. Find missed-call, quote follow-up, and maintenance follow-up gaps." />
+  <title>Free Revenue Leak Audit | 6-Figure Detailer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body{background:#0b0f14;color:#fff;}
+    .audit-wrap{max-width:900px;margin:0 auto;padding:48px 20px 90px;}
+    .audit-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#fff;font-weight:800;font-size:20px;margin-bottom:42px;}
+    .audit-mark{width:38px;height:38px;border-radius:10px;background:#ffb612;color:#101820;display:grid;place-items:center;font-weight:900;}
+    .audit-hero{text-align:center;max-width:760px;margin:0 auto 34px;}
+    .audit-kicker{display:inline-block;color:#ffb612;font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;}
+    .audit-hero h1{font-size:clamp(34px,6vw,62px);line-height:1.03;margin:0 0 18px;letter-spacing:-.03em;}
+    .audit-hero p{font-size:18px;line-height:1.65;color:#b8c0ca;margin:0 auto;max-width:700px;}
+    .audit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:34px 0 38px;}
+    .audit-point{border:1px solid #28313b;background:#121820;border-radius:14px;padding:18px;}
+    .audit-point strong{display:block;color:#ffb612;margin-bottom:6px;}
+    .audit-point span{color:#b8c0ca;font-size:14px;line-height:1.5;}
+    .audit-card{background:#121820;border:1px solid #2a333d;border-radius:18px;padding:28px;box-shadow:0 25px 70px rgba(0,0,0,.35);}
+    .audit-card h2{margin:0 0 8px;font-size:28px;}
+    .audit-card .intro{margin:0 0 24px;color:#aeb7c2;line-height:1.55;}
+    .audit-form{display:grid;gap:18px;}
+    .field label{display:block;font-size:14px;font-weight:700;margin-bottom:8px;color:#f4f6f8;}
+    .field input,.field select{width:100%;box-sizing:border-box;background:#0d131a;border:1px solid #35404c;color:#fff;border-radius:10px;padding:13px 14px;font-size:16px;outline:none;}
+    .field input:focus,.field select:focus{border-color:#ffb612;box-shadow:0 0 0 3px rgba(255,182,18,.12);}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+    .audit-btn{border:0;border-radius:10px;background:#ffb612;color:#101820;font-weight:900;font-size:16px;padding:15px 20px;cursor:pointer;margin-top:4px;}
+    .audit-note{font-size:12px;color:#77818d;text-align:center;margin-top:10px;}
+    .result{display:none;margin-top:22px;border-radius:12px;padding:20px;line-height:1.6;}
+    .result.good{display:block;border:1px solid rgba(255,182,18,.45);background:rgba(255,182,18,.08);}
+    .result.no{display:block;border:1px solid #38434f;background:#0e141b;color:#c4ccd5;}
+    .ghl-wrap{display:none;margin-top:28px;}
+    .ghl-wrap.show{display:block;}
+    .ghl-wrap h3{font-size:25px;margin:0 0 8px;}
+    .ghl-wrap p{color:#aeb7c2;margin:0 0 18px;line-height:1.55;}
+    iframe{width:100%;height:2077px;border:0;border-radius:10px;background:#fff;}
+    .back{display:inline-block;margin-top:24px;color:#aeb7c2;text-decoration:none;}
+    @media(max-width:700px){.audit-grid,.two-col{grid-template-columns:1fr}.audit-card{padding:20px}.audit-wrap{padding-top:28px}}
+  </style>
+</head>
+<body>
+  <main class="audit-wrap">
+    <a href="/" class="audit-logo"><span class="audit-mark">6</span> 6-Figure Detailer</a>
+
+    <section class="audit-hero">
+      <span class="audit-kicker">Free Revenue Leak Audit</span>
+      <h1>Find Where Your Coating Shop Is Losing Follow-Up Revenue.</h1>
+      <p>We review how your ceramic coating or PPF shop handles new inquiries, missed calls, unclosed estimates, and existing customers — then identify where follow-up may be breaking down.</p>
+    </section>
+
+    <div class="audit-grid">
+      <div class="audit-point"><strong>New Leads</strong><span>Missed calls, slow replies, and inquiries that never get a second touch.</span></div>
+      <div class="audit-point"><strong>Unclosed Quotes</strong><span>High-ticket estimates that disappear after the first conversation.</span></div>
+      <div class="audit-point"><strong>Existing Customers</strong><span>Coating customers who are never brought back for maintenance or follow-up.</span></div>
+    </div>
+
+    <section class="audit-card" id="qualifier-card">
+      <h2>First, make sure your shop qualifies.</h2>
+      <p class="intro">This audit is designed for established ceramic coating and PPF businesses where recovering even one missed high-ticket opportunity can matter.</p>
+
+      <form class="audit-form" id="qualifier-form">
+        <div class="two-col">
+          <div class="field">
+            <label for="business">Business name</label>
+            <input id="business" name="business" required placeholder="Your shop name" />
+          </div>
+          <div class="field">
+            <label for="website">Website</label>
+            <input id="website" name="website" type="url" required placeholder="https://..." />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="service">What services do you primarily sell?</label>
+          <select id="service" required>
+            <option value="">Select one</option>
+            <option value="ceramic">Ceramic coating</option>
+            <option value="ppf">PPF</option>
+            <option value="both">Ceramic coating + PPF</option>
+            <option value="detailing">Detailing only</option>
+            <option value="mobile">Mobile detailing only</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="ticket">What is your average ceramic coating or PPF job value?</label>
+          <select id="ticket" required>
+            <option value="">Select one</option>
+            <option value="under1000">Under $1,000</option>
+            <option value="1000">$1,000–$1,499</option>
+            <option value="1500">$1,500–$2,499</option>
+            <option value="2500">$2,500–$4,999</option>
+            <option value="5000">$5,000+</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="leads">About how many ceramic coating/PPF inquiries do you receive in a typical month?</label>
+          <select id="leads" required>
+            <option value="">Select one</option>
+            <option value="0-5">0–5</option>
+            <option value="6-10">6–10</option>
+            <option value="11-25">11–25</option>
+            <option value="26-50">26–50</option>
+            <option value="51+">51+</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="followup">What currently happens when a lead does not book immediately?</label>
+          <select id="followup" required>
+            <option value="">Select one</option>
+            <option value="strong">We consistently follow up until they decide, and our automation works well</option>
+            <option value="some">We follow up once or twice</option>
+            <option value="inconsistent">Follow-up is inconsistent</option>
+            <option value="nothing">Usually nothing</option>
+            <option value="unsure">I'm not sure</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="authority">Are you involved in deciding whether your shop purchases marketing/automation systems?</label>
+          <select id="authority" required>
+            <option value="">Select one</option>
+            <option value="yes">Yes — I am an owner or decision-maker</option>
+            <option value="with">I am involved, but another decision-maker also participates</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+
+        <button class="audit-btn" type="submit">Check My Shop & Continue</button>
+        <div class="audit-note">Qualification takes about one minute. No payment information required.</div>
+      </form>
+
+      <div id="qualify-result" class="result"></div>
+
+      <div id="ghl-wrap" class="ghl-wrap">
+        <h3>Your shop qualifies for the audit.</h3>
+        <p>Complete the application below so we can review your business and contact you about the Revenue Leak Audit and implementation options.</p>
+        <iframe
+          src="https://api.leadconnectorhq.com/widget/form/4lZSXOgxrMianb50teXU"
+          id="inline-4lZSXOgxrMianb50teXU"
+          title="6-Figure Detailer Revenue Leak Audit Application"></iframe>
+      </div>
+    </section>
+
+    <a class="back" href="/">← Back to 6-Figure Detailer</a>
+  </main>
+
+  <script>
+    const form = document.getElementById('qualifier-form');
+    const result = document.getElementById('qualify-result');
+    const ghl = document.getElementById('ghl-wrap');
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      const service = document.getElementById('service').value;
+      const ticket = document.getElementById('ticket').value;
+      const leads = document.getElementById('leads').value;
+      const followup = document.getElementById('followup').value;
+      const authority = document.getElementById('authority').value;
+
+      const sellsCore = ['ceramic','ppf','both'].includes(service);
+      const ticketQualified = ['1000','1500','2500','5000'].includes(ticket);
+      const volumeQualified = ['11-25','26-50','51+'].includes(leads);
+      const hasProblem = followup !== 'strong';
+      const hasAuthority = authority !== 'no';
+
+      const qualified = sellsCore && ticketQualified && volumeQualified && hasProblem && hasAuthority;
+
+      result.className = 'result';
+      ghl.classList.remove('show');
+
+      if (qualified) {
+        result.classList.add('good');
+        result.innerHTML = '<strong>Qualified.</strong> Based on your answers, your shop fits the minimum profile for a Revenue Leak Audit: high-ticket ceramic/PPF services, enough monthly inquiry volume, a follow-up gap, and decision-maker involvement.';
+        ghl.classList.add('show');
+        setTimeout(() => ghl.scrollIntoView({behavior:'smooth', block:'start'}), 150);
+      } else {
+        const reasons = [];
+        if (!sellsCore) reasons.push('the audit is currently limited to ceramic coating and/or PPF businesses');
+        if (!ticketQualified) reasons.push('average ceramic/PPF ticket must be at least $1,000');
+        if (!volumeQualified) reasons.push('the shop must receive at least 11 relevant ceramic/PPF inquiries per month');
+        if (!hasProblem) reasons.push('your current follow-up is already automated and working well');
+        if (!hasAuthority) reasons.push('an owner or purchasing decision-maker needs to be involved');
+
+        result.classList.add('no');
+        result.innerHTML = '<strong>This managed implementation is not the right fit right now.</strong><br>' + reasons.join('; ') + '.';
+      }
+    });
+  </script>
+  <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+</body>
+</html>
